@@ -1,5 +1,5 @@
 <template>
-  <div class="mb-6">
+  <div class="mb-4">
     <button class="btn-dropdown group">
       <div class="flex items-center gap-3">
         <span

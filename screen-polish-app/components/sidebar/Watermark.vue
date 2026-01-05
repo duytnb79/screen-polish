@@ -9,7 +9,7 @@ const activeDirection = ref("br"); // 'tl' | 'br'
 </script>
 
 <template>
-  <div class="space-y-4 mb-6">
+  <div class="space-y-3 mb-4">
     <div class="sidebar-title">
       <h3>Watermark</h3>
       <button

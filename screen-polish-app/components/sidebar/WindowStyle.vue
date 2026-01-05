@@ -8,13 +8,8 @@
           for="dark-mode"
           >Dark Mode</label
         >
-        <button
-          class="relative inline-flex h-5 w-9 items-center rounded-full bg-indigo-100/50 border border-indigo-200 transition-colors focus:outline-none"
-          id="dark-mode"
-        >
-          <span
-            class="inline-block h-3.5 w-3.5 transform translate-x-4 rounded-full bg-primary shadow-sm transition-transform"
-          ></span>
+        <button class="toggle-switch active" id="dark-mode">
+          <span class="toggle-thumb"></span>
         </button>
       </div>
     </div>

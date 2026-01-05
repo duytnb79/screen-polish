@@ -8,13 +8,13 @@
     @apply w-[340px] flex-none bg-surface-light dark:bg-surface-dark border-l border-border-light dark:border-border-dark flex flex-col z-10;
   }
   .sidebar-content {
-      @apply flex-1 overflow-y-auto custom-scrollbar p-6 space-y-7;
+      @apply flex-1 overflow-y-auto custom-scrollbar p-4 space-y-5;
   }
   .sidebar-section {
-    @apply mb-6 space-y-3;
+    @apply mb-4 space-y-2.5;
   }
   .sidebar-title {
-    @apply text-[11px] font-bold text-text-secondary tracking-wide uppercase flex items-center justify-between;
+    @apply text-[12px] font-bold text-text-secondary tracking-wide uppercase flex items-center justify-between;
   }
   .sidebar-label {
     @apply text-[12px] font-medium text-text-secondary flex items-center gap-2;
@@ -22,7 +22,7 @@
   
   /* Buttons */
   .btn-icon {
-    @apply h-10 rounded-lg bg-white border border-border-light hover:border-primary hover:text-primary text-text-secondary shadow-sm transition-all flex items-center justify-center cursor-pointer;
+    @apply h-9 rounded-lg bg-white border border-border-light hover:border-primary hover:text-primary text-text-secondary shadow-sm transition-all flex items-center justify-center cursor-pointer;
   }
   .btn-primary {
     @apply h-10 bg-[#1E293B] hover:bg-black text-white rounded-lg shadow-md font-semibold text-[13px] transition-all flex items-center justify-center cursor-pointer hover:shadow-lg active:scale-[0.98];
@@ -39,7 +39,7 @@
     @apply flex bg-slate-100 p-0.5 rounded-lg border border-slate-200/50;
   }
   .segmented-btn {
-    @apply flex-1 py-1.5 rounded text-[11px] font-medium transition-colors cursor-pointer select-none flex items-center justify-center;
+    @apply flex-1 py-1.5 rounded text-[12px] font-medium transition-colors cursor-pointer select-none flex items-center justify-center;
   }
   .segmented-btn.active {
     @apply bg-white shadow-sm text-text-main ring-1 ring-black/5 font-semibold;
@@ -56,7 +56,7 @@
     @apply flex justify-between items-center px-0.5;
   }
   .prop-value {
-    @apply h-6 min-w-[42px] px-1.5 rounded-md border border-border-light bg-white flex items-center justify-center text-[11px] font-mono text-text-main shadow-sm select-auto;
+    @apply h-6 min-w-[42px] px-1.5 rounded-md border border-border-light bg-white flex items-center justify-center text-[12px] font-mono text-text-main shadow-sm select-auto;
   }
   .prop-slider {
     @apply w-full h-1 bg-transparent rounded-lg appearance-none cursor-pointer focus:outline-none;
