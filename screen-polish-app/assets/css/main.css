@@ -1,48 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  /* Layout & Typography */
+  .sidebar-section {
+    @apply mb-6 space-y-3;
+  }
+  .sidebar-title {
+    @apply text-[12px] font-semibold text-text-main flex items-center justify-between;
+  }
+  .sidebar-label {
+    @apply text-[12px] font-medium text-text-secondary flex items-center gap-2;
+  }
+  
+  /* Buttons */
+  .btn-icon {
+    @apply h-10 rounded-lg bg-white border border-border-light hover:border-primary hover:text-primary text-text-secondary shadow-sm transition-all flex items-center justify-center cursor-pointer;
+  }
+  .btn-primary {
+    @apply h-10 bg-[#1E293B] hover:bg-black text-white rounded-lg shadow-md font-semibold text-[13px] transition-all flex items-center justify-center cursor-pointer;
+  }
+  .btn-secondary {
+    @apply h-10 rounded-lg border border-border-light bg-white hover:bg-slate-50 flex items-center justify-center text-text-secondary hover:text-text-main shadow-sm transition-colors cursor-pointer;
+  }
+
+  /* Segmented Controls */
+  .segmented-group {
+    @apply flex bg-slate-100 p-0.5 rounded-lg border border-slate-200/50;
+  }
+  .segmented-btn {
+    @apply flex-1 py-1.5 rounded text-[11px] font-medium transition-colors cursor-pointer select-none;
+  }
+  .segmented-btn.active {
+    @apply bg-white shadow-sm text-text-main ring-1 ring-black/5 font-semibold;
+  }
+  .segmented-btn.inactive {
+    @apply text-text-secondary hover:text-text-main;
+  }
+
+  /* Properties (Inputs & Sliders) */
+  .prop-group {
+    @apply space-y-3;
+  }
+  .prop-header {
+    @apply flex justify-between items-center px-0.5;
+  }
+  .prop-value {
+    @apply h-7 min-w-[48px] px-2 rounded-md border border-border-light bg-white flex items-center justify-center text-[11px] font-mono text-text-main shadow-sm;
+  }
+  .prop-slider {
+    @apply w-full h-1.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-primary;
+  }
+
+  /* Toggles */
+  .toggle-switch {
+    @apply w-9 h-5 rounded-full bg-slate-100 border border-slate-200 relative transition-colors duration-200 ease-in-out hover:bg-slate-200 cursor-pointer;
+  }
+  .toggle-thumb {
+    @apply absolute left-0.5 top-0.5 size-3.5 bg-white rounded-full shadow-sm transition-transform duration-200 ease-in-out;
+  }
+  
+  /* Color Swatches */
+  .color-swatch {
+    @apply flex-none size-11 rounded-full shadow-sm transition-transform cursor-pointer ring-1 ring-black/5 hover:scale-105 hover:ring-2 hover:ring-offset-1 hover:ring-primary/50;
+  }
+  .color-swatch.active {
+    @apply ring-2 ring-offset-2 ring-primary;
+  }
+}
+
 .checkerboard-bg {
-  background-color: #f8fafc;
-  background-image: linear-gradient(45deg, #f1f5f9 25%, transparent 25%),
-    linear-gradient(-45deg, #f1f5f9 25%, transparent 25%),
-    linear-gradient(45deg, transparent 75%, #f1f5f9 75%),
-    linear-gradient(-45deg, transparent 75%, #f1f5f9 75%);
-  background-size: 24px 24px;
-  background-position: 0 0, 0 12px, 12px -12px, -12px 0px;
+    background-color: #f8fafc;
+    background-image:
+        linear-gradient(45deg, #f1f5f9 25%, transparent 25%),
+        linear-gradient(-45deg, #f1f5f9 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, #f1f5f9 75%),
+        linear-gradient(-45deg, transparent 75%, #f1f5f9 75%);
+    background-size: 24px 24px;
+    background-position: 0 0, 0 12px, 12px -12px, -12px 0px;
 }
 .custom-scrollbar::-webkit-scrollbar {
-  width: 4px;
+    width: 4px;
 }
 .custom-scrollbar::-webkit-scrollbar-track {
-  background: transparent;
+    background: transparent;
 }
 .custom-scrollbar::-webkit-scrollbar-thumb {
-  background-color: #cbd5e1;
-  border-radius: 20px;
+    background-color: #cbd5e1;
+    border-radius: 20px;
 }
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-  background-color: #94a3b8;
+    background-color: #94a3b8;
 }
-input[type="range"] {
-  -webkit-appearance: none;
-  background: transparent;
+input[type=range] {
+    -webkit-appearance: none; 
+    background: transparent; 
 }
-input[type="range"]::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  height: 14px;
-  width: 14px;
-  border-radius: 50%;
-  background: #ffffff;
-  border: 2px solid #4f46e5;
-  cursor: pointer;
-  margin-top: -5px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  transition: transform 0.1s;
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 14px;
+    width: 14px;
+    border-radius: 50%;
+    background: #ffffff;
+    border: 2px solid #4f46e5;cursor: pointer;
+    margin-top: -5px; 
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    transition: transform 0.1s;
 }
-input[type="range"]::-webkit-slider-thumb:hover {
-  transform: scale(1.1);
+input[type=range]::-webkit-slider-thumb:hover {
+    transform: scale(1.1);
 }
-input[type="range"]::-webkit-slider-runnable-track {
-  width: 100%;
-  height: 4px;
-  cursor: pointer;
-  background: #e2e8f0;
-  border-radius: 2px;
+input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 4px;
+    cursor: pointer;
+    background: #e2e8f0;
+    border-radius: 2px;
 }

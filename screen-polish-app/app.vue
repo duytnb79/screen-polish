@@ -4,8 +4,8 @@
   >
     <AppHeader />
     <div class="flex flex-1 overflow-hidden">
-      <AppSidebar />
       <CanvasArea />
+      <AppSidebar />
     </div>
   </div>
 </template>

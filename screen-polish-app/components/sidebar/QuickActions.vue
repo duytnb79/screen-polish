@@ -1,47 +1,25 @@
 <template>
-  <section class="space-y-4">
+  <div class="mb-6 space-y-3">
     <h3
-      class="text-[11px] uppercase tracking-wider font-semibold text-text-secondary"
+      class="text-[11px] font-bold text-text-secondary tracking-wide uppercase"
     >
       Quick Actions
     </h3>
-    <div class="grid grid-cols-4 gap-2">
-      <button
-        class="h-9 rounded-lg bg-white border border-border-light hover:border-primary hover:text-primary text-text-secondary shadow-sm transition-all flex items-center justify-center group"
-        title="Crop Image"
-      >
-        <span
-          class="material-symbols-outlined text-[20px] group-active:scale-90 transition-transform"
-          >crop</span
-        >
+    <div class="grid grid-cols-4 gap-3">
+      <button class="btn-icon" title="Crop">
+        <span class="material-symbols-outlined text-[20px]">crop</span>
       </button>
-      <button
-        class="h-9 rounded-lg bg-white border border-border-light hover:border-primary hover:text-primary text-text-secondary shadow-sm transition-all flex items-center justify-center group"
-        title="Edit Layout"
-      >
-        <span
-          class="material-symbols-outlined text-[20px] group-active:scale-90 transition-transform"
-          >view_quilt</span
-        >
+      <button class="btn-icon" title="Flip Horizontal">
+        <span class="material-symbols-outlined text-[20px]">swap_horiz</span>
       </button>
-      <button
-        class="h-9 rounded-lg bg-white border border-border-light hover:border-primary hover:text-primary text-text-secondary shadow-sm transition-all flex items-center justify-center group"
-        title="Flip Horizontal"
-      >
-        <span
-          class="material-symbols-outlined text-[20px] group-active:scale-90 transition-transform"
+      <button class="btn-icon" title="Flip Vertical">
+        <span class="material-symbols-outlined text-[20px] rotate-90"
           >swap_horiz</span
         >
       </button>
-      <button
-        class="h-9 rounded-lg bg-white border border-border-light hover:border-primary hover:text-primary text-text-secondary shadow-sm transition-all flex items-center justify-center group"
-        title="Flip Vertical"
-      >
-        <span
-          class="material-symbols-outlined text-[20px] group-active:scale-90 transition-transform"
-          >swap_vert</span
-        >
+      <button class="btn-icon" title="Layout">
+        <span class="material-symbols-outlined text-[20px]">grid_view</span>
       </button>
     </div>
-  </section>
+  </div>
 </template>
