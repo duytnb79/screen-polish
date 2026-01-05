@@ -4,11 +4,17 @@
 
 @layer components {
   /* Layout & Typography */
+  .sidebar-container {
+    @apply w-[340px] flex-none bg-surface-light dark:bg-surface-dark border-l border-border-light dark:border-border-dark flex flex-col z-10;
+  }
+  .sidebar-content {
+      @apply flex-1 overflow-y-auto custom-scrollbar p-6 space-y-7;
+  }
   .sidebar-section {
     @apply mb-6 space-y-3;
   }
   .sidebar-title {
-    @apply text-[12px] font-semibold text-text-main flex items-center justify-between;
+    @apply text-[11px] font-bold text-text-secondary tracking-wide uppercase flex items-center justify-between;
   }
   .sidebar-label {
     @apply text-[12px] font-medium text-text-secondary flex items-center gap-2;
@@ -19,10 +25,13 @@
     @apply h-10 rounded-lg bg-white border border-border-light hover:border-primary hover:text-primary text-text-secondary shadow-sm transition-all flex items-center justify-center cursor-pointer;
   }
   .btn-primary {
-    @apply h-10 bg-[#1E293B] hover:bg-black text-white rounded-lg shadow-md font-semibold text-[13px] transition-all flex items-center justify-center cursor-pointer;
+    @apply h-10 bg-[#1E293B] hover:bg-black text-white rounded-lg shadow-md font-semibold text-[13px] transition-all flex items-center justify-center cursor-pointer hover:shadow-lg active:scale-[0.98];
   }
   .btn-secondary {
-    @apply h-10 rounded-lg border border-border-light bg-white hover:bg-slate-50 flex items-center justify-center text-text-secondary hover:text-text-main shadow-sm transition-colors cursor-pointer;
+    @apply h-10 rounded-lg border border-border-light bg-white hover:bg-slate-50 flex items-center justify-center text-text-secondary hover:text-text-main shadow-sm transition-colors cursor-pointer active:bg-slate-100;
+  }
+  .btn-dropdown {
+      @apply w-full h-10 border border-border-light rounded-lg px-3 flex items-center justify-between hover:border-primary/50 transition-colors bg-white hover:shadow-sm cursor-pointer;
   }
 
   /* Segmented Controls */
@@ -30,43 +39,60 @@
     @apply flex bg-slate-100 p-0.5 rounded-lg border border-slate-200/50;
   }
   .segmented-btn {
-    @apply flex-1 py-1.5 rounded text-[11px] font-medium transition-colors cursor-pointer select-none;
+    @apply flex-1 py-1.5 rounded text-[11px] font-medium transition-colors cursor-pointer select-none flex items-center justify-center;
   }
   .segmented-btn.active {
     @apply bg-white shadow-sm text-text-main ring-1 ring-black/5 font-semibold;
   }
   .segmented-btn.inactive {
-    @apply text-text-secondary hover:text-text-main;
+    @apply text-text-secondary hover:text-text-main hover:bg-white/50;
   }
 
   /* Properties (Inputs & Sliders) */
   .prop-group {
-    @apply space-y-3;
+    @apply space-y-1.5;
   }
   .prop-header {
     @apply flex justify-between items-center px-0.5;
   }
   .prop-value {
-    @apply h-7 min-w-[48px] px-2 rounded-md border border-border-light bg-white flex items-center justify-center text-[11px] font-mono text-text-main shadow-sm;
+    @apply h-6 min-w-[42px] px-1.5 rounded-md border border-border-light bg-white flex items-center justify-center text-[11px] font-mono text-text-main shadow-sm select-auto;
   }
   .prop-slider {
-    @apply w-full h-1.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-primary;
+    @apply w-full h-1 bg-transparent rounded-lg appearance-none cursor-pointer focus:outline-none;
+  }
+  /* Webkit Slider Thumb */
+  .prop-slider::-webkit-slider-thumb {
+    @apply appearance-none size-3 rounded-full bg-white border-[1.5px] border-primary shadow-sm mt-[-4px] transition-transform duration-100 ease-out;
+  }
+  .prop-slider::-webkit-slider-thumb:hover {
+    @apply scale-110;
+  }
+  /* Webkit Slider Runnable Track */
+  .prop-slider::-webkit-slider-runnable-track {
+    @apply w-full h-1 rounded-lg bg-slate-100 border-none;
   }
 
   /* Toggles */
   .toggle-switch {
-    @apply w-9 h-5 rounded-full bg-slate-100 border border-slate-200 relative transition-colors duration-200 ease-in-out hover:bg-slate-200 cursor-pointer;
+    @apply w-[34px] h-[20px] rounded-full bg-slate-200 border-none relative transition-colors duration-200 ease-in-out hover:bg-slate-300 cursor-pointer focus:outline-none;
+  }
+  .toggle-switch.active {
+    @apply bg-blue-500;
   }
   .toggle-thumb {
-    @apply absolute left-0.5 top-0.5 size-3.5 bg-white rounded-full shadow-sm transition-transform duration-200 ease-in-out;
+    @apply absolute left-[2px] top-[2px] size-4 bg-white rounded-full shadow-sm transition-transform duration-200 ease-in-out;
+  }
+  .toggle-switch.active .toggle-thumb {
+    @apply translate-x-[14px];
   }
   
   /* Color Swatches */
   .color-swatch {
-    @apply flex-none size-11 rounded-full shadow-sm transition-transform cursor-pointer ring-1 ring-black/5 hover:scale-105 hover:ring-2 hover:ring-offset-1 hover:ring-primary/50;
+    @apply flex-none size-8 rounded-full shadow-sm transition-transform cursor-pointer ring-1 ring-black/5 hover:scale-105 hover:ring-2 hover:ring-offset-1 hover:ring-primary/50 focus:outline-none;
   }
   .color-swatch.active {
-    @apply ring-2 ring-offset-2 ring-primary;
+    @apply ring-2 ring-offset-2 ring-primary scale-105;
   }
 }
 

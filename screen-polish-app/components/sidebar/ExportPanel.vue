@@ -1,5 +1,5 @@
 <template>
-  <div class="p-6 border-t border-border-light bg-surface-light mt-4 space-y-4">
+  <div class="p-6 border-t border-border-light bg-surface-light space-y-4">
     <div class="grid grid-cols-2 gap-4">
       <div class="space-y-2">
         <label class="text-[11px] font-medium text-text-secondary"
@@ -18,7 +18,7 @@
         </div>
       </div>
     </div>
-    <div class="flex gap-3">
+    <div class="flex gap-3 pt-1">
       <button class="btn-primary flex-1">Export Image</button>
       <button class="btn-secondary size-10 flex-none bg-white">
         <span class="material-symbols-outlined text-[20px]">content_copy</span>

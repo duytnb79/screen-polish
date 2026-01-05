@@ -1,8 +1,6 @@
 <template>
   <div class="mb-6">
-    <button
-      class="w-full h-10 border border-border-light rounded-lg px-3 flex items-center justify-between hover:border-primary/50 transition-colors bg-white group hover:shadow-sm"
-    >
+    <button class="btn-dropdown group">
       <div class="flex items-center gap-3">
         <span
           class="material-symbols-outlined text-[20px] text-text-secondary group-hover:text-primary transition-colors"
