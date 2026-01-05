@@ -4,8 +4,9 @@
       <SidebarHeader />
       <SidebarQuickActions />
       <SidebarWindowStyle />
-      <SidebarBackgroundSelector />
       <SidebarProperties />
+      <SidebarBackgroundSelector />
+      <SidebarWatermark />
     </div>
     <SidebarExportPanel />
   </aside>

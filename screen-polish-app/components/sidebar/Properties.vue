@@ -17,7 +17,10 @@ const getGradientStyle = (value: number, min: number, max: number) => {
 </script>
 
 <template>
-  <div class="space-y-4 pt-3 border-t border-border-light">
+  <div class="space-y-4">
+    <div class="sidebar-title">
+      <h3>Properties</h3>
+    </div>
     <!-- Scale -->
     <div class="prop-group">
       <div class="prop-header">
