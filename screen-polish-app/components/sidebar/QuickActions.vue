@@ -12,27 +12,32 @@
         </h3>
       </div>
     </div>
-    <div class="grid grid-cols-4 gap-2">
-      <button class="btn-icon" title="Crop">
-        <span class="material-symbols-outlined text-[18px] text-slate-600"
-          >crop</span
-        >
+    <div class="grid grid-cols-4 gap-1 px-1">
+      <button
+        class="flex items-center justify-center p-2 rounded-lg hover:bg-slate-100 transition-colors text-slate-500 hover:text-indigo-600"
+        title="Crop"
+      >
+        <span class="material-symbols-outlined text-[20px]">crop</span>
       </button>
-      <button class="btn-icon" title="Flip Horizontal">
-        <span class="material-symbols-outlined text-[18px] text-slate-600"
+      <button
+        class="flex items-center justify-center p-2 rounded-lg hover:bg-slate-100 transition-colors text-slate-500 hover:text-indigo-600"
+        title="Flip Horizontal"
+      >
+        <span class="material-symbols-outlined text-[20px]">swap_horiz</span>
+      </button>
+      <button
+        class="flex items-center justify-center p-2 rounded-lg hover:bg-slate-100 transition-colors text-slate-500 hover:text-indigo-600"
+        title="Flip Vertical"
+      >
+        <span class="material-symbols-outlined text-[20px] rotate-90"
           >swap_horiz</span
         >
       </button>
-      <button class="btn-icon" title="Flip Vertical">
-        <span
-          class="material-symbols-outlined text-[18px] rotate-90 text-slate-600"
-          >swap_horiz</span
-        >
-      </button>
-      <button class="btn-icon" title="Layout">
-        <span class="material-symbols-outlined text-[18px] text-slate-600"
-          >grid_view</span
-        >
+      <button
+        class="flex items-center justify-center p-2 rounded-lg hover:bg-slate-100 transition-colors text-slate-500 hover:text-indigo-600"
+        title="Layout"
+      >
+        <span class="material-symbols-outlined text-[20px]">grid_view</span>
       </button>
     </div>
   </div>

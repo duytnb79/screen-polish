@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import { ref } from "vue";
 
-const activeFrame = ref("none");
+const activeFrame = ref("mac-dark");
 
 const frames = [
   { id: "none", label: "None" },
-  { id: "rounded-square", label: "Rounded Square" },
-  { id: "circle", label: "Circle" },
+  { id: "rounded", label: "Rounded" },
+  { id: "shadow", label: "Shadow" },
   { id: "mac-light", label: "Mac Light" },
   { id: "mac-dark", label: "Mac Dark" },
 ];
@@ -25,91 +25,82 @@ const frames = [
           Frame
         </h3>
       </div>
-      <div class="flex items-center gap-3">
-        <div class="flex items-center gap-1.5 mr-1">
-          <label
-            class="text-[10px] text-slate-400 font-medium cursor-pointer"
-            for="dark-mode"
-            >Dark</label
-          >
-          <button
-            class="toggle-switch active scale-[0.7] origin-right"
-            id="dark-mode"
-          >
-            <span class="toggle-thumb"></span>
-          </button>
-        </div>
-        <button
-          class="text-[12px] text-slate-400 flex items-center gap-0.5 hover:text-slate-600 transition-colors font-medium"
+      <button
+        class="text-[12px] text-slate-400 flex items-center gap-0.5 hover:text-slate-600 transition-colors font-medium"
+      >
+        More
+        <span class="material-symbols-outlined text-[16px] text-slate-300"
+          >chevron_right</span
         >
-          More
-          <span class="material-symbols-outlined text-[16px] text-slate-300"
-            >chevron_right</span
-          >
-        </button>
-      </div>
+      </button>
     </div>
 
-    <div class="flex gap-2 pb-1 overflow-x-auto scrollbar-hide p-2">
+    <div
+      class="flex gap-2 pb-1 overflow-x-auto scrollbar-hide p-2 justify-center"
+    >
       <!-- Frame Thumbnails -->
       <button
         v-for="frame in frames"
         :key="frame.id"
-        class="flex-none size-14 rounded-lg border-2 transition-all flex items-center justify-center bg-slate-50 group relative"
+        class="flex-none h-10 w-12 rounded-lg border-2 transition-all flex items-center justify-center bg-[#f0f2f5] group relative"
         :class="
           activeFrame === frame.id
-            ? 'border-slate-500 ring-1 ring-slate-200'
+            ? 'border-indigo-500 ring-1 ring-indigo-200'
             : 'border-transparent hover:border-slate-300'
         "
         @click="activeFrame = frame.id"
       >
-        <!-- Mock Frame Preview -->
-        <!-- None - Bracket style -->
-        <div
-          v-if="frame.id === 'none'"
-          class="size-7 rounded-none border-[2.5px] border-slate-400 bg-white"
-        ></div>
+        <!-- Container (Parent) - overflow-hidden -->
+        <div class="relative w-full h-full overflow-hidden rounded-md">
+          <!-- Child (Full Window) - Positioned to show only 1 corner -->
 
-        <!-- Rounded Square -->
-        <div
-          v-if="frame.id === 'rounded-square'"
-          class="size-7 rounded-lg border-[2.5px] border-slate-400 bg-white"
-        ></div>
-
-        <!-- Circle -->
-        <div
-          v-if="frame.id === 'circle'"
-          class="size-7 rounded-full border-[2.5px] border-slate-400 bg-white"
-        ></div>
-
-        <!-- Mac Light -->
-        <div
-          v-if="frame.id === 'mac-light'"
-          class="w-9 h-7 bg-white rounded-md border border-slate-300 shadow-sm flex flex-col overflow-hidden"
-        >
+          <!-- None: Top-left -->
           <div
-            class="h-2 flex gap-0.5 px-1 items-center bg-slate-100 border-b border-slate-200"
-          >
-            <div class="size-1 rounded-full bg-red-400"></div>
-            <div class="size-1 rounded-full bg-yellow-400"></div>
-            <div class="size-1 rounded-full bg-green-400"></div>
-          </div>
-          <div class="flex-1 bg-white"></div>
-        </div>
+            v-if="frame.id === 'none'"
+            class="absolute top-[30%] left-[30%] w-[80px] h-[80px] bg-slate-300 rounded-lg shadow-sm"
+          ></div>
 
-        <!-- Mac Dark -->
-        <div
-          v-if="frame.id === 'mac-dark'"
-          class="w-9 h-7 bg-[#2d2d2d] rounded-md border border-slate-700 shadow-sm flex flex-col overflow-hidden"
-        >
+          <!-- Rounded: Top-left with thick white border -->
           <div
-            class="h-2 flex gap-0.5 px-1 items-center bg-[#1e1e1e] border-b border-white/5"
+            v-if="frame.id === 'rounded'"
+            class="absolute top-[30%] left-[30%] w-[80px] h-[80px] bg-slate-300 border-[4px] border-white rounded-lg shadow-sm"
+          ></div>
+
+          <!-- Shadow: Top-left with thick dark border -->
+          <div
+            v-if="frame.id === 'shadow'"
+            class="absolute top-[30%] left-[30%] w-[80px] h-[80px] bg-slate-300 border-[4px] border-slate-500 rounded-lg shadow-sm"
+          ></div>
+
+          <!-- Mac Light: Top-left -->
+          <div
+            v-if="frame.id === 'mac-light'"
+            class="absolute top-[30%] left-[30%] w-[80px] h-[80px] bg-white rounded-lg flex flex-col border border-slate-200 shadow-sm"
           >
-            <div class="size-1 rounded-full bg-red-500"></div>
-            <div class="size-1 rounded-full bg-yellow-500"></div>
-            <div class="size-1 rounded-full bg-green-500"></div>
+            <div
+              class="h-3 flex gap-0.5 px-1 items-center bg-slate-50 border-b rounded-t-lg border-slate-100"
+            >
+              <div class="size-1 rounded-full bg-red-400"></div>
+              <div class="size-1 rounded-full bg-yellow-400"></div>
+              <div class="size-1 rounded-full bg-green-400"></div>
+            </div>
+            <div class="flex-1 bg-slate-100"></div>
           </div>
-          <div class="flex-1 bg-[#2d2d2d]"></div>
+
+          <!-- Mac Dark: Top-left -->
+          <div
+            v-if="frame.id === 'mac-dark'"
+            class="absolute top-[30%] left-[30%] w-[80px] h-[80px] bg-slate-700 rounded-lg flex flex-col border border-slate-700 shadow-sm"
+          >
+            <div
+              class="h-3 flex gap-0.5 px-1 items-center bg-slate-900 border-b rounded-t-lg border-slate-800"
+            >
+              <div class="size-1 rounded-full bg-red-500"></div>
+              <div class="size-1 rounded-full bg-yellow-500"></div>
+              <div class="size-1 rounded-full bg-green-500"></div>
+            </div>
+            <div class="flex-1 bg-slate-800"></div>
+          </div>
         </div>
       </button>
     </div>
