@@ -5,10 +5,10 @@ const activeFrame = ref("mac-dark");
 
 const frames = [
   { id: "none", label: "None" },
-  { id: "rounded", label: "Rounded" },
-  { id: "shadow", label: "Shadow" },
+  { id: "rounded", label: "Border" },
   { id: "mac-light", label: "Mac Light" },
   { id: "mac-dark", label: "Mac Dark" },
+  { id: "glass", label: "Glass" },
 ];
 </script>
 
@@ -101,6 +101,12 @@ const frames = [
             </div>
             <div class="flex-1 bg-slate-800"></div>
           </div>
+
+          <!-- Glass: Top-left with blur -->
+          <div
+            v-if="frame.id === 'glass'"
+            class="absolute top-[30%] left-[30%] w-[80px] h-[80px] bg-white/20 backdrop-blur-md border border-white/30 rounded-lg shadow-sm"
+          ></div>
         </div>
       </button>
     </div>

@@ -2,7 +2,7 @@
   <aside class="sidebar-container">
     <div class="sidebar-content">
       <!-- 1. Size Selector -->
-      <SidebarHeader />
+      <SidebarFrameSize />
 
       <!-- 2. Styling: Frame -->
       <SidebarWindowStyle />
@@ -17,10 +17,10 @@
       <SidebarQuickActions />
 
       <!-- 6. Fine-tuning: Properties -->
-      <SidebarProperties />
+      <SidebarPropertiesSelector />
 
       <!-- 7. Optional: Watermark -->
-      <SidebarWatermark />
+      <SidebarWatermarkToggle />
     </div>
     <SidebarExportPanel />
   </aside>
