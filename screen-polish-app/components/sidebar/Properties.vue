@@ -11,21 +11,28 @@ const props = ref({
 const getGradientStyle = (value: number, min: number, max: number) => {
   const percentage = ((value - min) / (max - min)) * 100;
   return {
-    background: `linear-gradient(to right, #a5b4fc ${percentage}%, #f1f5f9 ${percentage}%)`,
+    background: `linear-gradient(to right, #94a3b8 ${percentage}%, #f1f5f9 ${percentage}%)`,
   };
 };
 </script>
 
 <template>
-  <div class="space-y-4">
+  <div class="sidebar-section">
     <div class="sidebar-title">
-      <h3>Properties</h3>
+      <div class="flex items-center gap-1.5">
+        <span class="material-symbols-outlined text-[18px] text-slate-600"
+          >settings</span
+        >
+        <h3 class="capitalize">Properties</h3>
+      </div>
     </div>
     <!-- Scale -->
     <div class="prop-group">
       <div class="prop-header">
         <label class="sidebar-label">
-          <span class="material-symbols-outlined text-[18px]">straighten</span>
+          <span class="material-symbols-outlined text-[16px] text-slate-600"
+            >straighten</span
+          >
           Scale
         </label>
         <div class="prop-value">{{ props.scale }}</div>
@@ -45,7 +52,9 @@ const getGradientStyle = (value: number, min: number, max: number) => {
     <div class="prop-group">
       <div class="prop-header">
         <label class="sidebar-label">
-          <span class="material-symbols-outlined text-[18px]">padding</span>
+          <span class="material-symbols-outlined text-[16px] text-slate-600"
+            >padding</span
+          >
           Padding
         </label>
         <div class="prop-value">{{ props.padding }}</div>
@@ -64,7 +73,7 @@ const getGradientStyle = (value: number, min: number, max: number) => {
     <div class="prop-group">
       <div class="prop-header">
         <label class="sidebar-label">
-          <span class="material-symbols-outlined text-[18px]"
+          <span class="material-symbols-outlined text-[16px] text-slate-600"
             >rounded_corner</span
           >
           Radius
@@ -85,7 +94,9 @@ const getGradientStyle = (value: number, min: number, max: number) => {
     <div class="prop-group">
       <div class="prop-header">
         <label class="sidebar-label">
-          <span class="material-symbols-outlined text-[18px]">blur_on</span>
+          <span class="material-symbols-outlined text-[16px] text-slate-600"
+            >blur_on</span
+          >
           Shadow
         </label>
         <div class="prop-value">{{ props.shadow }}</div>

@@ -2,10 +2,10 @@
   <aside class="sidebar-container">
     <div class="sidebar-content">
       <SidebarHeader />
-      <SidebarQuickActions />
       <SidebarWindowStyle />
-      <SidebarProperties />
       <SidebarBackgroundSelector />
+      <SidebarQuickActions />
+      <SidebarProperties />
       <SidebarWatermark />
     </div>
     <SidebarExportPanel />

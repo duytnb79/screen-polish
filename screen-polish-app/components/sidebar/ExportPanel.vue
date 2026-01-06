@@ -24,7 +24,7 @@ const downloadLabel = computed(() => {
 
 <template>
   <div
-    class="relative px-3 pb-4 pt-2 bg-surface-light border-t border-border-light"
+    class="relative px-2 pb-3 pt-2 bg-surface-light border-t border-border-light"
   >
     <!-- Popover Settings Modal -->
     <Transition
@@ -102,26 +102,26 @@ const downloadLabel = computed(() => {
     <div class="flex items-center gap-2">
       <!-- Download Group -->
       <div
-        class="flex-1 flex items-stretch shadow-lg shadow-indigo-500/20 rounded-xl overflow-hidden"
+        class="flex-1 flex items-stretch shadow-lg shadow-slate-500/20 rounded-xl overflow-hidden"
       >
         <button
-          class="flex-1 bg-indigo-600 hover:bg-indigo-700 text-white py-2 px-3 flex items-center justify-center gap-3 transition-colors group"
+          class="flex-1 bg-slate-600 hover:bg-slate-700 text-white py-2 px-3 flex items-center justify-center gap-3 transition-colors group"
         >
           <span class="material-symbols-outlined text-[20px]">download</span>
           <div class="flex flex-col items-start leading-none gap-0.5">
             <span class="text-[13px] font-bold">Download</span>
             <span
-              class="text-[10px] text-indigo-200 font-medium group-hover:text-white transition-colors"
+              class="text-[10px] text-slate-200 font-medium group-hover:text-white transition-colors"
               >{{ downloadLabel }}</span
             >
           </div>
         </button>
         <button
-          class="w-11 bg-indigo-600 hover:bg-indigo-700 text-white flex items-center justify-center transition-colors border-l border-white/10 group relative"
+          class="w-11 bg-slate-600 hover:bg-slate-700 text-white flex items-center justify-center transition-colors border-l border-white/10 group relative"
           title="Copy to Clipboard"
         >
           <span
-            class="material-symbols-outlined text-[18px] text-indigo-200 group-hover:text-white transition-colors"
+            class="material-symbols-outlined text-[18px] text-slate-200 group-hover:text-white transition-colors"
             >content_copy</span
           >
         </button>
@@ -130,9 +130,9 @@ const downloadLabel = computed(() => {
       <!-- Settings Button -->
       <button
         ref="toggleButton"
-        class="size-11 rounded-xl border border-border-light bg-white hover:bg-slate-50 hover:border-indigo-300 text-text-secondary hover:text-indigo-600 flex-none flex items-center justify-center transition-all shadow-sm"
+        class="size-11 rounded-xl border border-border-light bg-white hover:bg-slate-50 hover:border-slate-300 text-text-secondary hover:text-slate-600 flex-none flex items-center justify-center transition-all shadow-sm"
         :class="{
-          'border-indigo-500 text-indigo-600 bg-indigo-50 ring-2 ring-indigo-100':
+          'border-slate-500 text-slate-600 bg-slate-50 ring-2 ring-slate-100':
             showSettings,
         }"
         @click="showSettings = !showSettings"

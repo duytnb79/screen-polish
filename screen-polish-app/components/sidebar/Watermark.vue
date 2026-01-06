@@ -2,16 +2,21 @@
 import { ref } from "vue";
 
 const showWatermark = ref(true);
-const watermarkText = ref("ShotLy");
+const watermarkText = ref("Polish");
 const onlyBackground = ref(false);
 const watermarkColor = ref("#000000");
 const activeDirection = ref("br"); // 'tl' | 'br'
 </script>
 
 <template>
-  <div class="space-y-3 mb-4">
+  <div class="sidebar-section">
     <div class="sidebar-title">
-      <h3>Watermark</h3>
+      <div class="flex items-center gap-1.5">
+        <span class="material-symbols-outlined text-[18px] text-slate-600"
+          >branding_watermark</span
+        >
+        <h3>Watermark</h3>
+      </div>
       <button
         class="toggle-switch"
         :class="{ active: showWatermark }"
@@ -53,7 +58,8 @@ const activeDirection = ref("br"); // 'tl' | 'br'
             }"
             @click="activeDirection = 'tl'"
           >
-            <span class="material-symbols-outlined text-[16px] rotate-180"
+            <span
+              class="material-symbols-outlined text-[16px] rotate-180 text-slate-600"
               >arrow_outward</span
             >
           </button>
@@ -65,7 +71,7 @@ const activeDirection = ref("br"); // 'tl' | 'br'
             }"
             @click="activeDirection = 'br'"
           >
-            <span class="material-symbols-outlined text-[16px]"
+            <span class="material-symbols-outlined text-[16px] text-slate-600"
               >arrow_outward</span
             >
           </button>

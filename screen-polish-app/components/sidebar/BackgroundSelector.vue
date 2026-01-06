@@ -1,46 +1,59 @@
 <script setup lang="ts">
 import { ref } from "vue";
+
+const activeColor = ref(0);
+
+const swatches = [
+  "from-[#A594F9] to-[#8070F0]",
+  "from-rose-400 to-orange-300",
+  "from-purple-600 to-red-500", // Instagram style
+  "from-orange-400 to-rose-500",
+  "from-cyan-400 to-emerald-400",
+  "from-blue-500 to-purple-600",
+  "from-pink-300 to-indigo-400",
+];
 </script>
 
 <template>
-  <div class="space-y-5">
+  <div class="sidebar-section">
     <!-- Background Header -->
-    <div class="space-y-3">
-      <div class="sidebar-title">
-        <h3>Background</h3>
-        <button
-          class="text-[12px] text-text-secondary flex items-center gap-0.5 hover:text-text-main transition-colors lowercase font-medium"
+    <div class="sidebar-title">
+      <div class="flex items-center gap-1.5">
+        <span class="material-symbols-outlined text-[18px] text-slate-600"
+          >palette</span
         >
-          more
-          <span class="material-symbols-outlined text-[16px]"
-            >chevron_right</span
-          >
-        </button>
+        <h3>Background</h3>
       </div>
-
-      <!-- Swatches -->
-      <div
-        class="flex gap-2.5 overflow-x-auto pb-2 scrollbar-hide px-1 py-1 -mx-1"
+      <button
+        class="text-[12px] text-slate-400 flex items-center gap-0.5 hover:text-slate-600 transition-colors font-medium mr-0.5"
       >
-        <button
-          class="flex-none size-9 rounded-full ring-2 ring-primary ring-offset-2 bg-gradient-to-br from-[#A594F9] to-[#8070F0] cursor-pointer"
-        ></button>
-        <button
-          class="flex-none size-9 rounded-full bg-gradient-to-br from-rose-400 to-orange-300 hover:scale-105 transition-transform cursor-pointer shadow-sm"
-        ></button>
-        <button
-          class="flex-none size-9 rounded-full bg-gradient-to-br from-purple-500 to-indigo-500 hover:scale-105 transition-transform cursor-pointer shadow-sm"
-        ></button>
-        <button
-          class="flex-none size-9 rounded-full bg-gradient-to-br from-orange-300 to-yellow-200 hover:scale-105 transition-transform cursor-pointer shadow-sm"
-        ></button>
-        <button
-          class="flex-none size-9 rounded-full bg-gradient-to-br from-cyan-400 to-blue-500 hover:scale-105 transition-transform cursor-pointer shadow-sm"
-        ></button>
-        <button
-          class="flex-none size-9 rounded-full bg-gradient-to-br from-fuchsia-400 to-pink-500 hover:scale-105 transition-transform cursor-pointer shadow-sm"
-        ></button>
-      </div>
+        More
+        <span class="material-symbols-outlined text-[16px] text-slate-300"
+          >chevron_right</span
+        >
+      </button>
+    </div>
+
+    <!-- Swatches Grid -->
+    <div class="flex gap-2.5 overflow-x-auto pb-2 scrollbar-hide p-2">
+      <button
+        v-for="(gradient, index) in swatches"
+        :key="index"
+        class="flex-none size-7 rounded-full relative transition-all duration-300 shadow-sm hover:scale-110"
+        :class="[
+          'bg-gradient-to-br ' + gradient,
+          activeColor === index
+            ? 'ring-[1px] ring-slate-500 ring-offset-2 scale-105'
+            : 'hover:ring-2 hover:ring-slate-200 hover:ring-offset-1',
+        ]"
+        @click="activeColor = index"
+      >
+        <!-- Dual ring selection look from image -->
+        <div
+          v-if="activeColor === index"
+          class="absolute inset-[-4px] rounded-full border border-slate-200 pointer-events-none transition-all"
+        ></div>
+      </button>
     </div>
   </div>
 </template>
