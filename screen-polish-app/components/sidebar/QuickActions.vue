@@ -2,9 +2,6 @@
   <div class="sidebar-section">
     <div class="sidebar-title !mb-1.5">
       <div class="flex items-center gap-1.5">
-        <span class="material-symbols-outlined text-[18px] text-slate-600"
-          >bolt</span
-        >
         <h3
           class="capitalize font-bold text-slate-800 text-[13px] tracking-tight"
         >

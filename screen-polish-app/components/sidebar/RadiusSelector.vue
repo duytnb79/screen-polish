@@ -9,23 +9,12 @@ const radiusOptions = [
   { id: "lg", label: "Large", class: "rounded-lg", radius: 6 },
   { id: "xl", label: "Extra Large", class: "rounded-xl", radius: 8 },
 ];
-
-const getCornerPath = (radius: number) => {
-  if (radius === 0) {
-    return "M 24 4 L 24 24 L 4 24";
-  }
-  const r = radius;
-  return `M 24 4 L 24 ${24 - r} Q 24 24 ${24 - r} 24 L 4 24`;
-};
 </script>
 
 <template>
   <div class="sidebar-section">
     <div class="sidebar-title !mb-1.5">
       <div class="flex items-center gap-1.5">
-        <span class="material-symbols-outlined text-[18px] text-slate-600"
-          >rounded_corner</span
-        >
         <h3
           class="capitalize font-bold text-slate-800 text-[13px] tracking-tight"
         >

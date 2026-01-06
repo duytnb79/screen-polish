@@ -12,9 +12,6 @@ const activeDirection = ref("br"); // 'tl' | 'br'
   <div class="sidebar-section">
     <div class="sidebar-title">
       <div class="flex items-center gap-1.5">
-        <span class="material-symbols-outlined text-[18px] text-slate-600"
-          >branding_watermark</span
-        >
         <h3>Watermark</h3>
       </div>
       <button

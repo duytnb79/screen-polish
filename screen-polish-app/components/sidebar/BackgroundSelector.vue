@@ -19,9 +19,6 @@ const swatches = [
     <!-- Background Header -->
     <div class="sidebar-title">
       <div class="flex items-center gap-1.5">
-        <span class="material-symbols-outlined text-[18px] text-slate-600"
-          >palette</span
-        >
         <h3>Background</h3>
       </div>
       <button
